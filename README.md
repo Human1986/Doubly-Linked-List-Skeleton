@@ -1,4 +1,4 @@
-# Doubly linked list
+# Doubly Linked List
 
 The purpose of this exercise is to create and use a custom doubly linked list. 
 
@@ -42,7 +42,7 @@ Now, please proceed to the  `DoublyLinkedListImpl` class, which implements the  
 *	The list is created by the default constructor, which initializes the head and tail fields to null.
 *	The list cannot contain null elements. The add, remove, and set methods must throw a `NullPointerException` if they get null.
 *	The remove method must use the equals method to find the occurrence of the object in the list.
-*	The string representation of a list consists of all its elements separated by a space. For example, if a list contains three elements, o1, o2, and o3, the toString method returns "s1 s2 s3", where s1=o1.toString(), `s2=o2.toStribng()`, and `s3=o3.toString()`.
+*	The string representation of a list consists of all its elements separated by a space. For example, if a list contains three elements, o1, o2, and o3, the `toString` method returns "s1 s2 s3", where `s1=o1.toString()`, `s2=o2.toStribng()`, and `s3=o3.toString()`.
 
 ## Restrictions
 
