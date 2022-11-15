@@ -1,39 +1,53 @@
 # Doubly linked list
 
-The purpose of this exercise is to train you to create and use a custom doubly linked list.  
+The purpose of this exercise is to create and use a custom doubly linked list. 
 
 Duration _60 minutes_.
 
-## Restrictions
-
-`DoublyLinkedListImpl` class must have only two fields `head` and `tail` (in particularly it must have no `size` field). Also it must contain a default constructor which can be called with no arguments to create an empty list.
-
-> _Note_:
-> You are not allowed to use any types from `java.util` package (and its subpackages) except of the `java.util.Optional` 
 
 ## Description 
-Please, proceed to `DoublyLinkedListImpl` class and implement the following methods (all of them are given in `DoublyLinkedList` interface):  
 
-* `boolean addFirst(Object element)` inserts an element to the head of list, returns true if an element successfully added, false otherwise;  
+In this task, you will describe a bidirectional list based on a linked representation. The internal structure of the list is a node chain (nested class Node) where each node encapsulates a list element and has one reference to the previous node and one reference to the following node. The first node has no reference to the previous node, and the last node has no reference to the next one.
 
-* `boolean addLast(Object element)` appends an element to the end of list, returns true if an element successfully added, false otherwise;  
 
-* `void delete(int index)` deletes an element by index, throws *IndexOutOfBoundsException* if the index is out of range;  
+Now, please proceed to the  `DoublyLinkedListImpl` class, which implements the  `DoublyLinkedList` interface, and provide implementations of the following methods:  
 
-* `Optional<Object> remove(Object element)` returns the first occurrence of the specified element in this list and removes it, you have to use the `equals` method to find the occurance;  
+* `boolean addFirst(Object element)`  
+   Inserts an element at the beginning of the list and returns true if an element is successfully added and, if not, false  
 
-* `boolean set(int index, Object element)` replaces the element at the specified position in list with the specified element, throws *IndexOutOfBoundsException* if the index is out of range;  
+* `boolean addLast(Object element)`  
+   Appends an element to the end of this list and returns true if an element is successfully added and, if not, false  
 
-* `int size()` returns the number of elements in list;  
+* `boolean delete(int index)`  
+   Deletes an element by index and throws `IndexOutOfBoundsException` if the index is out of range  
 
-* `Object[] toArray()` returns an array containing all the elements in order from the first to the last, in other words from the head to the tail of list;  
+* `Optional<String> remove(Object element)`  
+   Returns and deletes the first occurrence of the specified element in the list  
 
-* `String toString()` returns a string representation of this list; the string representation consists of all the elements separated with a space. For a example if a list contains three elements *o1*, *o2*, *o3* then `toString` method returns *"s1 s2 s3"* where *s1=o1.toString()*; *s2=o2.toStribng()*; *s3=o3.toString()*.
+* `boolean set(int index, Object element)`  
+   Finds the element at the specified index and removes it or throws the `IndexOutOfBoundsException` if the index is out of range  
 
-> You have to implement two types: the top level class `DoublyLinkedListImpl` and the nested class `Node`. The top level interface `DoublyLinkedList` is given, don't change any content of it.  
+* `int size()`  
+   Returns the number of elements in the list  
+
+* `String[] toArray() `  
+   Returns an array containing all the elements in order from first to last 
+
+* `String toString()`  
+   Returns a string representation of the list 
 
 # Details
 
-* You have to implement `Node` class. Every instance of `Node` contains an object and the references to a previous node and a next node. Every doubly linked list consists of such nodes.
+*	The `DoublyLinkedListImpl` class has two fields, head and tail, and should not contain a size field to store the number of elements.
+*	The list is created by the default constructor, which initializes the head and tail fields to null.
+*	The list cannot contain null elements. The add, remove, and set methods must throw a `NullPointerException` if they get null.
+*	The remove method must use the equals method to find the occurrence of the object in the list.
+*	The string representation of a list consists of all its elements separated by a space. For example, if a list contains three elements, o1, o2, and o3, the toString method returns "s1 s2 s3", where s1=o1.toString(), `s2=o2.toStribng()`, and `s3=o3.toString()`.
 
-* Doubly linked list cannot contain the null reference.
+## Restrictions
+
+You may not: 
+*	Use any type from the  `java.util` package or its subpackages except for  `java.util.Optional`
+*	Add additional fields to the  `DoublyLinkedListImpl` and  `DoublyLinkedListImpl.Node` classes
+*	Add any additional methods to the  `DoublyLinkedListImpl.Node` class except constructors
+
