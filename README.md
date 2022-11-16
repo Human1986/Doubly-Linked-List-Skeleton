@@ -2,12 +2,12 @@
 
 The purpose of this exercise is to create and use a custom doubly linked list. 
 
-Duration _60 minutes_.
+Duration - **1 hour**
 
 
 ## Description 
 
-In this task, you will describe a bidirectional list based on a linked representation. The internal structure of the list is a node chain (nested class Node) where each node encapsulates a list element and has one reference to the previous node and one reference to the following node. The first node has no reference to the previous node, and the last node has no reference to the next one.
+In this task, you will describe a bidirectional list based on a linked representation. The internal structure of the list is a node chain (nested class `Node`) where each node encapsulates a list element and has one reference to the previous node and one reference to the following node. The first node has no reference to the previous node, and the last node has no reference to the next one.
 
 
 Now, please proceed to the  `DoublyLinkedListImpl` class, which implements the  `DoublyLinkedList` interface, and provide implementations of the following methods:  
@@ -36,7 +36,7 @@ Now, please proceed to the  `DoublyLinkedListImpl` class, which implements the  
 * `String toString()`  
    Returns a string representation of the list 
 
-# Details
+### Details
 
 *	The `DoublyLinkedListImpl` class has two fields, head and tail, and should not contain a size field to store the number of elements.
 *	The list is created by the default constructor, which initializes the head and tail fields to null.
