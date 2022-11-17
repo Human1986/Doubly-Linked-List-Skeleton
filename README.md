@@ -21,7 +21,7 @@ Now, please proceed to the  `DoublyLinkedListImpl` class, which implements the  
 * `boolean delete(int index)`  
    Deletes an element by index and throws `IndexOutOfBoundsException` if the index is out of range  
 
-* `Optional<String> remove(Object element)`  
+* `Optional<Object> remove(Object element)`  
    Returns and deletes the first occurrence of the specified element in the list  
 
 * `boolean set(int index, Object element)`  
@@ -30,7 +30,7 @@ Now, please proceed to the  `DoublyLinkedListImpl` class, which implements the  
 * `int size()`  
    Returns the number of elements in the list  
 
-* `String[] toArray() `  
+* `Object[] toArray() `  
    Returns an array containing all the elements in order from first to last 
 
 * `String toString()`  
