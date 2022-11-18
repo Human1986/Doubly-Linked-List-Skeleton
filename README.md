@@ -2,7 +2,7 @@
 
 The purpose of this exercise is to create and use a custom doubly linked list. 
 
-Duration - **1 hour**
+Duration: **1 hour**
 
 
 ## Description 
