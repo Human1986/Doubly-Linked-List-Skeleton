@@ -25,7 +25,7 @@ Now, please proceed to the  `DoublyLinkedListImpl` class, which implements the  
    Returns and deletes the first occurrence of the specified element in the list  
 
 * `boolean set(int index, Object element)`  
-   Finds the element at the specified index and removes it or throws the `IndexOutOfBoundsException` if the index is out of range  
+   Finds the element at the specified index and replaces it or throws the `IndexOutOfBoundsException` if the index is out of range  
 
 * `int size()`  
    Returns the number of elements in the list  
