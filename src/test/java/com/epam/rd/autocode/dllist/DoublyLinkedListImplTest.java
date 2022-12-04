@@ -11,6 +11,7 @@ import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.List;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -20,7 +21,54 @@ import spoon.reflect.declaration.CtTypeInformation;
 import spoon.reflect.reference.CtTypeReference;
 import spoon.reflect.visitor.filter.TypeFilter;
 
-public class DoublyLinkedListTest {
+/**
+ * @author D. Kolesnikov
+ */
+public class DoublyLinkedListImplTest {
+
+	//////////////////////////////////////////////////////////////////////////////
+
+	private static boolean isAllTestsMustFailed;
+
+	private static Throwable complianceTestFailedCause;
+
+	static {
+		try {
+			String testClassName = new Exception().getStackTrace()[0].getClassName();
+			String className = testClassName.substring(0, testClassName.lastIndexOf("Test"));
+			Class<?> c = Class.forName(className);
+
+			java.lang.reflect.Method[] methods = { 
+					c.getDeclaredMethod("addFirst", Object.class),
+					c.getDeclaredMethod("addLast", Object.class),
+					c.getDeclaredMethod("delete", int.class),
+					c.getDeclaredMethod("remove", Object.class),
+					c.getDeclaredMethod("set", int.class, Object.class),
+					c.getDeclaredMethod("size"),
+					c.getDeclaredMethod("toArray"),
+					c.getDeclaredMethod("toString")
+				};
+
+			org.apache.bcel.classfile.JavaClass jc = org.apache.bcel.Repository.lookupClass(c);
+			for (java.lang.reflect.Method method : methods) {
+				org.apache.bcel.classfile.Method m = jc.getMethod(method);
+				org.apache.bcel.classfile.Code code = m.getCode();
+				Assertions.assertTrue(code.getCode().length > 2, () -> m + " is not a stub");
+			}
+		} catch (Throwable t) {
+			isAllTestsMustFailed = true;
+			complianceTestFailedCause = t;
+			t.printStackTrace();
+		}
+	}
+
+	{
+		if (isAllTestsMustFailed) {
+			Assertions.fail(() -> "Compliance test failed: " + complianceTestFailedCause.getMessage());
+		}
+	}
+
+	//////////////////////////////////////////////////////////////////////////////
 	
 	private DoublyLinkedListImpl list;
 	
